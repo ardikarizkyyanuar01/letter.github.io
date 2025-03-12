@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animasi Boneka Bergerak</title>
+<style>
+    @keyframes walk {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(300px); }
+        100% { transform: translateX(0); }
+    }
+    
+    .boneka {
+        width: 100px;
+        height: 100px;
+        background-color: #f700ff;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        animation: walk 4s infinite linear;
+    }
+    
+    .head {
+        width: 60px;
+        height: 60px;
+        background-color: #f700ff;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 20px;
+    }
+    
+    .eye {
+        width: 10px;
+        height: 10px;
+        background-color: #000;
+        border-radius: 50%;
+        position: absolute;
+        top: 20px;
+        left: 30px;
+    }
+    
+    .hand {
+        width: 20px;
+        height: 60px;
+        background-color: #f700ff;
+        position: absolute;
+        top: 40px;
+        left: 0;
+    }
+    
+    .hand.left {
+        transform-origin: top right;
+        transform: rotate(45deg);
+    }
+    
+    .hand.right {
+        transform-origin: top left;
+        transform: rotate(-45deg);
+        left: 80px;
+    }
+</style>
+</head>
+<body>
+    <div class="boneka">
+        <div class="head">
+            <div class="eye"></div>
+            <div class="eye" style="left: 50px;"></div>
+        </div>
+        <div class="hand left"></div>
+        <div class="hand right"></div>
+    </div>
+</body>
+</html>
